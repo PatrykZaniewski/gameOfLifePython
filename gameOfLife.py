@@ -7,8 +7,8 @@ class gameOfLife:
         x = "test.txt"
         read = Read(x)
         arr, lineNumber, maxLen = read.readFile()
-        afterBorder = Border(arr, len, lineNumber)
-        afterBorder.Boder()
+        afterBorder = Border(arr, maxLen, lineNumber)
+        afterBorder.border()
 
 if __name__ == "__main__":
     gameOfLife().main()

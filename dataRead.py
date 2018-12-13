@@ -38,15 +38,12 @@ class Border:
         self.arr = arr
         self.length = length
         self.hei = hei
-        print(self.length)
 
-    def Boder(self):
+    def border(self):
         for x in self.arr:
             size = x.__len__()
-            #print(size)
-
-        print(self.length)
-        #a = np.empty(self.len)
-       # a.fill(2)
-        # self.arr.insert(np.full(self.len, 2))
-        # self.arr.add(np.full(self.len, 2))
+#TODO otoczyc
+        a = np.full((self.length), 2)
+        self.arr.insert(0, a)
+        self.arr.insert(self.hei + 1, a)
+        print(self.arr[1][1])
