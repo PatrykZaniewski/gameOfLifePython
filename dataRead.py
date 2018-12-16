@@ -40,13 +40,13 @@ class Border:
         self.heigth = heigth
 
     def border(self):
-        for x in range(0, self.heigth):
-            self.arr[x].insert(0, 2)
         for x in self.arr:
             if x.__len__() < self.length:
                 for i in range(0, self.length - x.__len__()):
                     x.append(2)
             x.append(2)
+        for x in range(0, self.heigth):
+            self.arr[x].insert(0, 2)
         a = np.full(self.length + 2, 2, dtype=int)
         self.arr.insert(0, a)
         self.arr.insert(self.heigth + 1, a)
