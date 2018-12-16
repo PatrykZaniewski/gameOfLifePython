@@ -27,23 +27,27 @@ class Read:
                     arrLine.append(1)
                 else:
                     arrLine.append(2)
-            arr.append(line)
+            arr.append(arrLine)
             line = readMe.readline()
         return arr, lineNumber, maxLen
 
 
 class Border:
 
-    def __init__(self, arr, length, hei):
+    def __init__(self, arr, length, heigth):
         self.arr = arr
         self.length = length
-        self.hei = hei
+        self.heigth = heigth
 
     def border(self):
+        for x in range(0, self.heigth):
+            self.arr[x].insert(0, 2)
         for x in self.arr:
-            size = x.__len__()
-#TODO otoczyc
-        a = np.full((self.length), 2)
+            if x.__len__() < self.length:
+                for i in range(0, self.length - x.__len__()):
+                    x.append(2)
+            x.append(2)
+        a = np.full(self.length + 2, 2, dtype=int)
         self.arr.insert(0, a)
-        self.arr.insert(self.hei + 1, a)
-        print(self.arr[1][1])
+        self.arr.insert(self.heigth + 1, a)
+        return self.arr, self.length, self.heigth
